@@ -14,8 +14,8 @@ msg "Building docker image"
 sudo docker build --tag server .
 
 msg "Stopping Docker container"
-sudo docker stop $(docker ps -q -f name=<server>)
-sudo docker stop $(docker ps -q -f name=<server>)
+sudo docker stop $(sudo docker ps -q -f name=server)
+sudo docker stop $(sudo docker ps -q -f name=server)
 
 msg "Starting Docker container"
 nohup sudo docker run --name app --expose 80 -p 80:80 server
