@@ -14,7 +14,7 @@ msg "Pulling from GitHub"
 git pull
 
 msg "Starting server"
-# nohup sudo npm run deploy &
+nohup sudo npm run deploy &
 
 duration=$SECONDS
 echo
