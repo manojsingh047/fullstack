@@ -1,7 +1,7 @@
 #!/bin/bash
 SECONDS=0
 
-cd $HOME/app
+cd $HOME/fullstack
 
 msg() {
     echo -e "$1\n--------------------\n"
