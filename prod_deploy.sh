@@ -8,13 +8,13 @@ msg() {
 }
 
 msg "Stopping app"
-sudo pkill app
+sudo sudo pkill -f node
 
 msg "Pulling from GitHub"
 git pull
 
 msg "Starting server"
-nohup sudo npm run deploy &>/dev/null &
+nohup sudo npm run deploy &
 
 duration=$SECONDS
 echo
