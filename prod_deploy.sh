@@ -7,14 +7,21 @@ msg() {
     echo -e "$1\n--------------------\n"
 }
 
-msg "Stopping app"
-sudo sudo pkill -f node
-
 msg "Pulling from GitHub"
 git pull
 
-msg "Starting server"
-nohup sudo npm run deploy &
+msg "Building docker image"
+sudo docker build --tag server .
+
+msg "Stopping Docker container"
+sudo docker stop server
+sudo docker rm server
+
+msg "Starting Docker container"
+nohup sudo docker run --name app --expose 8080 -p 8080:8080 server
+
+msg "Pruning stale Docker images"
+sudo docker image prune -f
 
 duration=$SECONDS
 echo
