@@ -18,7 +18,7 @@ sudo docker stop server
 sudo docker rm server
 
 msg "Starting Docker container"
-nohup sudo docker run --name app --expose 8080 -p 8080:8080 server
+nohup sudo docker run --name app --expose 80 -p 80:80 server
 
 msg "Pruning stale Docker images"
 sudo docker image prune -f
