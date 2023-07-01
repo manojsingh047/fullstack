@@ -1,3 +1,3 @@
 #!/bin/bash
-sshcmd="ssh -t juraj@app.jurajmajerik.com"
-$sshcmd screen -S "deployment" /home/juraj/app/prod_deploy.sh
+sshcmd="ssh -i /home/manojs/.ssh/id_rsa manojs@35.208.175.52"
+$sshcmd screen -S "deployment" $HOME/fullstack prod_deploy.sh
