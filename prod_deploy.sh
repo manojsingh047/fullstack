@@ -22,9 +22,3 @@ nohup sudo docker run --name app --expose 80 -p 80:80 server
 
 msg "Pruning stale Docker images"
 sudo docker image prune -a -f
-
-duration=$SECONDS
-echo
-msg "Deploy finished in $(($duration % 60)) seconds."
-msg "Press Enter to exit"
-read
